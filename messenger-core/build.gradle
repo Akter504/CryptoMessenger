@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.java.maryan'
+version '1.0-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(22)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.slf4j:slf4j-api:2.0.16'
+    implementation 'ch.qos.logback:logback-classic:1.4.11'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.testng:testng:7.4.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+}
