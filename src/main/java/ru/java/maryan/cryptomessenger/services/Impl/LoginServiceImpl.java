@@ -23,7 +23,6 @@ public class LoginServiceImpl implements LoginService {
         if (!passwordEncoder.matches(password, user.getPasswordHash())) {
             throw new AuthException("Invalid credentials");
         }
-        String stringId = user.getId().toString();
-        return new TokenResponse(tokenUtils.generateJwtToken(stringId));
+        return new TokenResponse(tokenUtils.generateJwtToken(user.getLogin()));
     }
 }

@@ -28,7 +28,6 @@ public class RegisterServiceImpl implements RegisterService {
         user.setPasswordHash(passwordEncoder.encode(request.getPassword()));
         userService.createUser(user);
 
-        String stringId = user.getId().toString();
-        return new TokenResponse(tokenUtils.generateJwtToken(stringId));
+        return new TokenResponse(tokenUtils.generateJwtToken(user.getLogin()));
     }
 }

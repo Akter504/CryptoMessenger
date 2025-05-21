@@ -1,1 +1,4 @@
 rootProject.name = 'CryptoMessenger'
+
+include 'messenger-api'
+include 'messenger-core'

@@ -39,11 +39,11 @@ public class TokenUtils {
         }
     }
 
-    public String generateJwtToken(String id) {
+    public String generateJwtToken(String login) {
         Algorithm algorithm = Algorithm.HMAC256(secret);
         return JWT.create()
                 .withIssuer(issuer)
-                .withSubject(id)
+                .withSubject(login)
                 .withIssuedAt(new Date())
                 .withExpiresAt(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24))
                 .sign(algorithm);

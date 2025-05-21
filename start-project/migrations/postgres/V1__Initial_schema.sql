@@ -14,7 +14,7 @@ CREATE INDEX idx_users_login ON users(login);
 -- System_Roles
 CREATE TABLE IF NOT EXISTS System_Roles (
     id bigserial PRIMARY KEY,
-    name_system_role varchar(10) NOT NULL UNIQUE,
+    name_system_role varchar(10) NOT NULL,
     user_id uuid NOT NULL,
     FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE,
     CONSTRAINT unique_user_role UNIQUE (user_id, name_system_role)
