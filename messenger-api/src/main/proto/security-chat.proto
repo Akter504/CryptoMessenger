@@ -12,9 +12,10 @@ enum MessageType {
 
 message EncryptedMessage {
   string roomId = 1;
-  string senderId = 2;
-  bytes encryptedData = 3;
-  MessageType type = 4;
+  string senderLogin = 2;
+  string receiverLogin = 3;
+  bytes encryptedData = 4;
+  MessageType type = 5;
 }
 
 message RoomConfig {
