@@ -2,6 +2,7 @@ package ru.java.maryan.AsymmetricCryptoAlgs.impl;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
+import java.util.Objects;
 
 public class DiffieHellman {
     private BigInteger privateKey;
@@ -30,6 +31,8 @@ public class DiffieHellman {
     }
 
     public DiffieHellman(byte[] p, byte[] g) {
+        Objects.requireNonNull(p, "Parameter p cannot be null");
+        Objects.requireNonNull(g, "Parameter g cannot be null");
         this.p = new BigInteger(1, p);
         this.g = new BigInteger(1, g);
         generateKeys();

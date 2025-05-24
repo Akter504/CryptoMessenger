@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.securechat.proto";
+option java_outer_classname = "SecurityChatProto";
+
+enum MessageType {
+  text = 0;
+  image = 1;
+  other = 2;
+}
+
+message EncryptedMessage {
+  string roomId = 1;
+  string senderId = 2;
+  bytes encryptedData = 3;
+  MessageType type = 4;
+}
+
+message RoomConfig {
+  string roomId = 1;
+  string senderLogin = 2;
+  string receiverLogin = 3;
+  string encryptionAlgorithm = 4;
+  string padding = 5;
+  string mode = 6;
+  bytes iv = 7;
+  bytes delta = 8;
+  bytes g = 9;
+  bytes p = 10;
+  bytes publicKey = 11;
+}
+
+message RoomResponse {
+  bool accepted = 1;
+  bytes publicKey = 2;
+  string message = 3;
+}
+
+message RoomInvite {
+  RoomConfig config = 1;
+}
+
+message RoomDecision {
+  string roomId = 1;
+  string senderLogin = 2;
+  string receiverLogin = 3;
+  bool accepted = 4;
+  bytes publicKey = 5;
+  string message = 6;
+}
+
+service ChatService {
+  rpc startRoom(RoomConfig) returns (RoomResponse);
+  rpc subscribeInvites(UserLogin) returns (stream RoomInvite);
+  rpc respondToInvite(RoomDecision) returns (RoomResponse);
+  rpc chat(stream EncryptedMessage) returns (stream EncryptedMessage);
+}
+
+message UserLogin {
+  string login = 1;
+}
+

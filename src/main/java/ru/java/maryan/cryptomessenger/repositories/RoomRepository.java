@@ -16,4 +16,12 @@ public interface RoomRepository extends JpaRepository<Room, UUID> {
     WHERE r.userFirst.id = :userId OR r.userSecond.id = :userId
     """)
     List<Room> findAllRoomsByUserId(@Param("userId") UUID userId);
+
+    @Query("""
+    SELECT r FROM Room r
+    JOIN FETCH r.userFirst
+    JOIN FETCH r.userSecond
+    WHERE (r.userFirst.id = :userId OR r.userSecond.id = :userId) AND r.id = :roomId
+    """)
+    Room findOtherUser(@Param("userId") UUID userId, @Param("roomId") UUID roomId);
 }
