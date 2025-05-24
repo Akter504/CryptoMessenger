@@ -1,6 +1,6 @@
-package ru.java.maryan.CryptoLabs.DES;
+package ru.java.maryan.SymmeticCryptoAlgs;
 
-import ru.java.maryan.CryptoLabs.DES.impl.SymmetricCryptographicContext;
+import ru.java.maryan.SymmeticCryptoAlgs.impl.SymmetricCryptographicContext;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
