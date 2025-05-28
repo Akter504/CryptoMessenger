@@ -1,6 +1,6 @@
 package ru.java.maryan.SymmeticCryptoAlgs.impl.TwoFish;
 
-import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFishSGenerator;
+import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFish.TwoFishSGenerator;
 
 import java.util.Arrays;
 

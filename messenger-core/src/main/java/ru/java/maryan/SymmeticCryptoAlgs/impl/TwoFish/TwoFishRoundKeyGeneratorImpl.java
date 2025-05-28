@@ -1,6 +1,6 @@
 package ru.java.maryan.SymmeticCryptoAlgs.impl.TwoFish;
 
-import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFishRoundKeyGenerator;
+import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFish.TwoFishRoundKeyGenerator;
 
 import static ru.java.maryan.SymmeticCryptoAlgs.impl.TwoFish.TwoFishAdditionalFunctions.*;
 

@@ -1,10 +1,11 @@
 package ru.java.maryan.SymmeticCryptoAlgs.impl.TwoFish;
 
 import de.scravy.pair.Pair;
-import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFishEncryptionConverter;
+import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFish.TwoFishRoundFunction;
+
 import static ru.java.maryan.SymmeticCryptoAlgs.impl.TwoFish.TwoFishAdditionalFunctions.*;
 
-public class TwoFishRoundFunction implements TwoFishEncryptionConverter {
+public class TwoFishRoundFunctionImpl implements TwoFishRoundFunction {
 
     private final int mask = 0x169;
 

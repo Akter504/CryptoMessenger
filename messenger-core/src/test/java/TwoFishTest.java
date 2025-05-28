@@ -1,15 +1,12 @@
 import org.junit.Test;
-import org.testng.Assert;
-import ru.java.maryan.AsymmetricCryptoAlgs.impl.DiffieHellman;
 import ru.java.maryan.SymmeticCryptoAlgs.impl.TwoFish.TwoFish;
-import ru.java.maryan.SymmeticCryptoAlgs.impl.TwoFish.TwoFishRoundFunction;
+import ru.java.maryan.SymmeticCryptoAlgs.impl.TwoFish.TwoFishRoundFunctionImpl;
 import ru.java.maryan.SymmeticCryptoAlgs.impl.TwoFish.TwoFishRoundKeyGeneratorImpl;
 import ru.java.maryan.SymmeticCryptoAlgs.impl.TwoFish.TwoFishSGeneratorImpl;
-import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFishEncryptionConverter;
-import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFishRoundKeyGenerator;
-import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFishSGenerator;
+import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFish.TwoFishRoundFunction;
+import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFish.TwoFishRoundKeyGenerator;
+import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFish.TwoFishSGenerator;
 
-import java.util.Arrays;
 import java.util.HexFormat;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -25,7 +22,7 @@ public class TwoFishTest {
     public void testEncrypt() {
         TwoFishSGenerator sGen = new TwoFishSGeneratorImpl();
         TwoFishRoundKeyGenerator keyGen = new TwoFishRoundKeyGeneratorImpl();
-        TwoFishEncryptionConverter converter = new TwoFishRoundFunction();
+        TwoFishRoundFunction converter = new TwoFishRoundFunctionImpl();
         TwoFish twoFish = new TwoFish(ZERO_KEY, keyGen, sGen, converter);
 
         byte[] actualCiphertext = twoFish.encrypt(ZERO_PLAINTEXT);
@@ -38,7 +35,7 @@ public class TwoFishTest {
     public void testDecrypt() {
         TwoFishSGenerator sGen = new TwoFishSGeneratorImpl();
         TwoFishRoundKeyGenerator keyGen = new TwoFishRoundKeyGeneratorImpl();
-        TwoFishEncryptionConverter converter = new TwoFishRoundFunction();
+        TwoFishRoundFunction converter = new TwoFishRoundFunctionImpl();
         TwoFish twoFish = new TwoFish(ZERO_KEY, keyGen, sGen, converter);
 
         byte[] actualText = twoFish.decrypt(EXPECTED_CIPHERTEXT);

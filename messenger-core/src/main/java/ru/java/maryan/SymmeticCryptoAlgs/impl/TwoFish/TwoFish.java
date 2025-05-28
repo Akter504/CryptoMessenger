@@ -2,12 +2,10 @@ package ru.java.maryan.SymmeticCryptoAlgs.impl.TwoFish;
 
 import de.scravy.pair.Pair;
 import de.scravy.pair.Pairs;
-import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFishEncryptionConverter;
 import ru.java.maryan.SymmeticCryptoAlgs.interfaces.SymmetricCryptographicAlgorithm;
-import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFishRoundKeyGenerator;
-import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFishSGenerator;
-
-import java.util.Arrays;
+import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFish.TwoFishRoundFunction;
+import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFish.TwoFishRoundKeyGenerator;
+import ru.java.maryan.SymmeticCryptoAlgs.interfaces.TwoFish.TwoFishSGenerator;
 
 import static ru.java.maryan.SymmeticCryptoAlgs.impl.TwoFish.TwoFishAdditionalFunctions.*;
 
@@ -16,10 +14,10 @@ public class TwoFish implements SymmetricCryptographicAlgorithm {
     private final int[] M;
     private final int[] roundKeys;
     private final int[] S;
-    private final TwoFishEncryptionConverter roundFunction;
+    private final TwoFishRoundFunction roundFunction;
 
     public TwoFish(byte[] key, TwoFishRoundKeyGenerator keyGenerator, TwoFishSGenerator sGenerator,
-                   TwoFishEncryptionConverter roundFunction) {
+                   TwoFishRoundFunction roundFunction) {
         this.M = convertDataToParts(key);
         this.roundKeys = keyGenerator.createRoundKeys(M);
         this.S = sGenerator.createS(M);
