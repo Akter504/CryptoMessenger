@@ -110,7 +110,6 @@ public class MessengerController {
         grid.setVgap(8);
         grid.setHgap(10);
 
-        // Поля формы для создания чата
         TextField receiverField = new TextField();
         ComboBox<String> algorithmCombo = new ComboBox<>(FXCollections.observableArrayList(
                 "TwoFish", "Camelia"
@@ -178,7 +177,7 @@ public class MessengerController {
     private void handleNewChat(RoomConfig config) {
         Platform.runLater(() -> {
             try {
-                Chat newChat = new Chat(config.getRoomId(), config.getSenderLogin());
+                Chat newChat = new Chat(config.getRoomId(), config.getReceiverLogin());
                 ObservableList<Chat> chats = chatListView.getItems();
                 if (chats.stream().noneMatch(c -> c.getRoomId().equals(newChat.getRoomId()))) {
                     chats.add(newChat);

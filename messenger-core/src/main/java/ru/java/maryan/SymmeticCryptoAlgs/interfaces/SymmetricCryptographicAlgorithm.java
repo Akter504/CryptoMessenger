@@ -1,4 +1,4 @@
-package ru.java.maryan.CryptoLabs.DES.interfaces;
+package ru.java.maryan.SymmeticCryptoAlgs.interfaces;
 
 public interface SymmetricCryptographicAlgorithm {
 

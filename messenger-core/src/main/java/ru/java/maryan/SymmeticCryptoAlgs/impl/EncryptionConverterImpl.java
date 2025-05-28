@@ -1,8 +1,9 @@
 package ru.java.maryan.CryptoLabs.DES.impl;
 
 
-import ru.java.maryan.CryptoLabs.DES.UtilityClassForRearrangingBits;
-import ru.java.maryan.CryptoLabs.DES.interfaces.EncryptionConverter;
+
+import ru.java.maryan.SymmeticCryptoAlgs.UtilityClassForRearrangingBits;
+import ru.java.maryan.SymmeticCryptoAlgs.interfaces.EncryptionConverter;
 
 import java.util.ArrayList;
 import java.util.List;

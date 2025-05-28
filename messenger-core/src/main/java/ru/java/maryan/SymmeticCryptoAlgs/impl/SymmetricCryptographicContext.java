@@ -1,7 +1,6 @@
-package ru.java.maryan.CryptoLabs.DES.impl;
+package ru.java.maryan.SymmeticCryptoAlgs.impl;
 
-
-import ru.java.maryan.CryptoLabs.DES.interfaces.SymmetricCryptographicAlgorithm;
+import ru.java.maryan.SymmeticCryptoAlgs.interfaces.SymmetricCryptographicAlgorithm;
 
 import java.io.InputStream;
 import java.math.BigInteger;

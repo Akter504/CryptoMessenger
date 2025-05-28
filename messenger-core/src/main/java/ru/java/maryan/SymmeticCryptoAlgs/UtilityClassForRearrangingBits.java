@@ -1,4 +1,4 @@
-package ru.java.maryan.CryptoLabs.DES;
+package ru.java.maryan.SymmeticCryptoAlgs;
 
 import java.util.ArrayList;
 import java.util.Collections;
